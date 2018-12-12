@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "package": "mkdir build; ./node_modules/.bin/babel *.jsx > ./build/bundle.js && cp ./root.html ./build/root.html"
   },
   "author": "",
   "license": "ISC",

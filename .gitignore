@@ -1,2 +1,4 @@
-frontend/*.js
 node_modules
+frontend/build/*.js
+frontend/build/*.html
+frontend/build/*.css
