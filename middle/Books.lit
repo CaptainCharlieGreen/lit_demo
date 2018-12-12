@@ -1,0 +1,11 @@
+service Books {
+  include "../backend/Backend"
+
+  any getBooks (void) {
+    artifact: "./books.js"
+  }
+
+  any addBook (any) {
+    artifact: "./addBook.js"
+  }
+}

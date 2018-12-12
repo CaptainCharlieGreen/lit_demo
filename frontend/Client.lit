@@ -1,0 +1,10 @@
+service Client {
+  include "../middle/Books"
+  include "../middle/Sales"
+  include "../../http/Http"
+
+  Http { method: "get" path: "/" } ->
+  any bundle () {
+    artifact: "./build/bundle.html"
+  }
+}

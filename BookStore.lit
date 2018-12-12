@@ -1,0 +1,3 @@
+service BookStore {
+  include "./frontend/Client"
+}

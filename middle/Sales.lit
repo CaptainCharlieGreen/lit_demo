@@ -1,0 +1,11 @@
+service Sales {
+  include "../backend/Backend"
+
+  any getSales (void) {
+    artifact: "./sales.js"
+  }
+
+  any registerBookSale (any) {
+    artifact: "./registerSale.js"
+  }
+}
