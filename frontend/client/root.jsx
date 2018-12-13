@@ -1,5 +1,5 @@
 function apiGet (method) {
-  const apiRoot = `${window.location.protocol}//${window.location.host}/api`;
+  const apiRoot = `${window.location.protocol}//${window.location.host}/x/api`;
   return fetch (`${apiRoot}/${method}`)
     .then(response => response.json());
 }
