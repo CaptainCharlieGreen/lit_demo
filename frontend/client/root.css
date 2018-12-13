@@ -1,0 +1,44 @@
+#header {
+  background-color: rgba(0,0,0,.9);
+  color: orange;
+  padding: 10px;
+}
+
+body {
+  margin: 0px;
+}
+
+.contentBox {
+  width: 500px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 10px;
+  border: 2px solid black;
+  display: inline-block;
+  float: left;
+  padding-bottom: 10px;
+}
+
+.contentBox h3 {
+  border-bottom: 1px solid black;
+}
+
+#sales {
+  min-height: 200px;
+}
+
+.book {
+  font-style: oblique;
+  background-color: lightgray;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.book p {
+  font-size: 10px;
+  font-style: normal;
+}
+
+.book-sale {
+  border: 2px solid orange;
+}

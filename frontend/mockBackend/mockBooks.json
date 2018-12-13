@@ -2,6 +2,14 @@
   {
     "name": "The Grapes of Wrath",
     "author": "John Steinbeck",
-    "image": "https://upload.wikimedia.org/wikipedia/en/1/1f/JohnSteinbeck_TheGrapesOfWrath.jpg"
+    "sale": true
+  },
+  {
+    "name": "War and Peace",
+    "author": "Leo Tolstoy"
+  },
+  {
+    "name": "The C Programming Language",
+    "author": "Brian Kernighan and Dennis Ritchie"
   }
 ]

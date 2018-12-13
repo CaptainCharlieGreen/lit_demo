@@ -3,7 +3,7 @@ service Client {
   include "../middle/Sales"
   include "../../http/Http"
 
-  Http { method: "get" path: "/" } ->
+  Http { method: "get" path: "/index.html" } ->
   any index () {
     artifact: "./build/root.html"
   }
@@ -13,5 +13,12 @@ service Client {
     artifact: "./build/bundle.js"
   }
 
+  Http { method: "get" path: "/root.css" } ->
+  any css () {
+    artifact: "./build/root.css"
+  }
+
   Http { method: "get" path: "/api/books" } -> Books.getBooks
+  Http { method: "post" path: "/api/books" } -> Books.addBook
+  Http { method: "get" path: "/api/sales" } -> Sales.getSales
 }
