@@ -4,7 +4,14 @@ service Client {
   include "../../http/Http"
 
   Http { method: "get" path: "/" } ->
-  any bundle () {
-    artifact: "./build/bundle.html"
+  any index () {
+    artifact: "./build/root.html"
   }
+
+  Http { method: "get" path: "/bundle.js" } ->
+  any bundle () {
+    artifact: "./build/bundle.js"
+  }
+
+  Http { method: "get" path: "/api/books" } -> Books.getBooks
 }

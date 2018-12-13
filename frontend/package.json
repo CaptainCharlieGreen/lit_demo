@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "package": "mkdir build; ./node_modules/.bin/babel *.jsx > ./build/bundle.js && cp ./root.html ./build/root.html"
+    "package": "mkdir build; ./node_modules/.bin/babel client/*.jsx > ./build/bundle.js && cp client/root.html ./build/root.html"
   },
   "author": "",
   "license": "ISC",

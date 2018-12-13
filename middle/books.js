@@ -1,0 +1,1 @@
+module.exports = event => Promise.resolve('hello from books.js');
