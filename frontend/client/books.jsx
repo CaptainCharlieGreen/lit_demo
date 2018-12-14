@@ -1,5 +1,6 @@
 function getBooks () {
-  return apiGet('books');
+  return apiGet('books')
+    .then(render);
 }
 
 function render (books) {
@@ -12,11 +13,10 @@ function addBook (title, author) {
     name: title,
     author: author
   })
-  .then(() => getBooks())
-  .then(render);
+  .then(getBooks);
 }
 
-getBooks().then(render);
+getBooks();
 
 function renderBook (book, id) {
   return <div key={id} className={`book ${book.sale ? 'book-sale': ""}`}>
@@ -24,7 +24,6 @@ function renderBook (book, id) {
     <p>
       By {book.author}
     </p>
-
   </div>
 }
 
@@ -38,29 +37,11 @@ class Books extends React.Component {
       books: books
     };
 
-    this.handleNewTitle = this.handleNewTitle.bind(this);
-    this.handleNewAuthor = this.handleNewAuthor.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.addBook = this.addBook.bind(this);
   }
 
-  handleNewTitle(event) {
-    this.state.newTitle = event.target.value;
-    this.render();
-  }
-
-  handleNewAuthor(event) {
-    this.state.newAuthor = event.target.value;
-    this.render();
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.addBook();
-  }
-
   addBook() {
-    addBook(this.state.newTitle, this.state.newAuthor);
+    addBook(this.state.newTitle.value, this.state.newAuthor.value);
   }
 
   render() {
@@ -68,17 +49,13 @@ class Books extends React.Component {
       <div>
         <h3>Books</h3>
         <div>
-          {
-            (this.state.books || []).map(renderBook)
-          }
+          { (this.state.books || []).map(renderBook) }
         </div>
         <p>Add a book:</p>
         title: <input type="text"
-                      value={this.state.newTitle}
-                      onChange={this.handleNewTitle}></input>
+                      ref={input => this.state.newTitle = input}></input>
         author: <input type="text"
-                       value={this.state.newAuthor}
-                       onChange={this.handleNewAuthor}></input>
+                       ref={input => this.state.newAuthor = input}></input>
         <button onClick={this.addBook}>add</button>
       </div>
       );

@@ -14,15 +14,7 @@ const books = [
 ];
 
 module.exports = function () {
-  console.log('here')
-  var x;
-  try {
-    x = Lit('Sales-getSales');  
-  } catch (e) {
-    console.log('there')
-    console.log(e);
-  }
-  return x()
+  return Lit('Sales-getSales')()
     .then(sales => {
       const salesSet = new Set((sales || []));
       return Promise.resolve(books.map(book => {
