@@ -1,11 +1,11 @@
 function apiGet (method) {
-  const apiRoot = `${window.location.protocol}//${window.location.host}/x/api`;
+  const apiRoot = `${window.location.protocol}//${window.location.host}/Client/api`;
   return fetch (`${apiRoot}/${method}`)
     .then(response => response.json());
 }
 
 function postData(method, data) {
-  const apiRoot = `${window.location.protocol}//${window.location.host}/x/api`;
+  const apiRoot = `${window.location.protocol}//${window.location.host}/Client/api`;
   return fetch(`${apiRoot}/${method}`, {
       method: "POST",
       headers: {
