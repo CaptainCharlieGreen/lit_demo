@@ -2,11 +2,6 @@ service Books {
   include "../backend/Backend"
   include "./Sales"
 
-  any getBooks (void) {
-    artifact: "./books.js"
-  }
-
-  any addBook (any) {
-    artifact: "./addBook.js"
-  }
+  getBooks ():any -> "./books.js"
+  addBook (any):any -> "./addBook.js"
 }

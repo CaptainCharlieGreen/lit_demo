@@ -1,3 +1,4 @@
+const Lit = require('lit');
 const books = [
   {
     "name": "The Grapes of Wrath",

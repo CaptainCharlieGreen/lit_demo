@@ -1,23 +1,12 @@
 service Client {
   include "../middle/Books"
   include "../middle/Sales"
-  include "../../http/Http"
+  include "Http"
 
-  Http { method: "get" path: "/index.html" } ->
-  any index () {
-    artifact: "./build/root.html"
-  }
-
-  Http { method: "get" path: "/bundle.js" } ->
-  any bundle () {
-    artifact: "./build/bundle.js"
-  }
-
-  Http { method: "get" path: "/root.css" } ->
-  any css () {
-    artifact: "./build/root.css"
-  }
-
+  Http { method: "get" path: "/" }
+  Http { method: "get" path: "/index.html" } -> "./build/root.html"
+  Http { method: "get" path: "/bundle.js" } -> "./build/bundle.js"
+  Http { method: "get" path: "/root.css" } -> "./build/root.css"
   Http { method: "get" path: "/api/books" } -> Books.getBooks
   Http { method: "post" path: "/api/books" } -> Books.addBook
   Http { method: "get" path: "/api/sales" } -> Sales.getSales

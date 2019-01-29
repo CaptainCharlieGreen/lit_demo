@@ -2,3 +2,5 @@ node_modules
 frontend/build/*.js
 frontend/build/*.html
 frontend/build/*.css
+litconfig.json
+build/
